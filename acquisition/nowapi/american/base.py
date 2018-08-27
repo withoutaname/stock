@@ -48,7 +48,7 @@ class StockCrawler:
                 ticket = TicketMgr().get_ticket()
                 app_key = ticket[0]
                 sign = ticket[1]
-                if(app_key == '' or sign == sign == ''):
+                if(app_key == '' or sign == ''):
                     self.logger.error(
                         '%s:invalid_ticket=[],app_key=[%s],sign=[%s]' % (self.symbol, app_key, sign))
                     continue
