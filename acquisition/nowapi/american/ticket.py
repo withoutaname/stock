@@ -11,7 +11,7 @@ import sys
 
 class Counter():
 
-    def __init__(self, appkey, sign, counter=35):
+    def __init__(self, appkey, sign, counter=100):
         self.appkey = appkey
         self.sign = sign
         self.remain = counter
