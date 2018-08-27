@@ -18,7 +18,7 @@ import sys
 
 class StockCrawler:
 
-    def __init__(self, username, passwd, database, symbol):
+    def __init__(self, username, passwd, database, symbol, log_path):
         self.last_timestamp = 0
         self.db = MySQLdb.connect("localhost", username, passwd, database)
         self.db.set_character_set('utf8')
@@ -30,7 +30,7 @@ class StockCrawler:
         self.host = 'api.k780.com'
 
         # 初始化日志设置
-        self.log_file = '/root/log/american_stock_acquisition_nowapi/log'
+        self.log_file = log_path
         self.log_handler = handlers.TimedRotatingFileHandler(
             self.log_file, 'D', 1, 7)
         self.log_format = "%(asctime)s %(filename)s %(lineno)d %(message)s"
